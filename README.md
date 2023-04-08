@@ -41,3 +41,6 @@ The order here is important. If the JavaScript did not wait for the HTML and CSS
 
 ## Q5. Is JavaScript single threaded or multi threaded ?
 **Ans.** JavaScript is a single threaded language, because it executes the code line by line
+
+## Q6. What are the different data types present in JavaScript ?
+**Ans.**
