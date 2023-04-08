@@ -15,4 +15,29 @@ Once this is done, the JavaScript is executed in the order the code is written. 
 The order here is important. If the JavaScript did not wait for the HTML and CSS to finish, it would not be able to change.
 
 ## Q3. Is JavaScript static type or dynamic typed language?
-**Ans.** JavaScript is a dynamic typed language because a variable value is checked during runtime. It is an interpreted language, which means it does not need a compiler to translate code. & execute the code line by line.
+**Ans.** JavaScript is a dynamic typed language because a variable value is checked during runtime. It is an interpreted language, which means it does not need a compiler to translate code. & single threaded because it executes the code line by line.
+
+## Q4. Advantage & Dis-advantage of JavaScript ?
+**Ans.** 
+
+<table>
+<tr>
+<th>Advantage</th>
+<th>Dis-Advantage</th>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Lack of debugging functionality</td>
+</tr>
+<tr>
+<td>Ability to support all browser</td>
+<td>Lack of debugging functionality</td>
+</tr>
+<tr>
+<td>Interpreted language</td>
+<td>Code visibilty</td>
+</tr>            
+</table>
+
+## Q5. Is JavaScript single threaded or multi threaded ?
+**Ans.** JavaScript is a single threaded language, because it executes the code line by line
