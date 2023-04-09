@@ -48,14 +48,16 @@ The order here is important. If the JavaScript did not wait for the HTML and CSS
 2. Non-Primitive datatype
 
 
-* Primitive datatype :- The value of primitive datatype is immutable, which means we can not change the value of primitive datatype. Primitive datatypes are : 1. number <br>
-2. string <br>
-3. boolean <br>
-4. null <br>
-5. undefined
+* Primitive datatype :- The value of primitive datatype is immutable, which means we can not change the value of primitive datatype. Primitive datatypes are : 
+   1. number <br>
+   2. string <br>
+   3. boolean <br>
+   4. null <br>
+   5. undefined
 
-* Non-Primitive datatype :- The value of non-primitive datatype is mutable, which means we can change the value of non-primitive datatype. Non-Primitive datatypes are : 1. array <br>
-2. object <br>
-3. function <br>
-4. date <br>
-5. RegEx
+* Non-Primitive datatype :- The value of non-primitive datatype is mutable, which means we can change the value of non-primitive datatype. Non-Primitive datatypes are : 
+   1. array <br>
+   2. object <br>
+   3. function <br>
+   4. date <br>
+   5. RegEx
