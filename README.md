@@ -460,64 +460,37 @@
 | 449 | [What is Functon Composition?](#what-is-function-composition) |
 | 450 | [How to use await outside of async function prior to ES2022?](#how-to-use-await-outside-of-async-function-prior-to-es2022) |
 
-## Q1. What is JavaScript ?
-**Ans.** JavaScript is a scripting language, which is used to make web application interactive. It is an interpreted language, which means it does not need a compiler to translate code. It is used as a frontend & backend both.
+1. ### What are the possible ways to create objects in JavaScript
 
-## Q2. How does JavaScript work ?
-**Ans.** The web browser loads a web page, parses the HTML, and creates what is known as a Document Object Model (DOM) from the contents. The DOM presents a live view of the web page to your JavaScript code.
+   There are many ways to create objects in javascript as below
 
-The browser will then grab everything linked to the HTML, like images and CSS files. The CSS information comes from the CSS parser.
+   1. **Object constructor:**
 
-The HTML and CSS are put together by the DOM to create the web page first. Then, the browsers' JavaScript engine loads JavaScript files and inline code but does not run the code immediately. It waits for the HTML and CSS to finish loading.
+      The simplest way to create an empty object is using the Object constructor. Currently this approach is not recommended.
 
-Once this is done, the JavaScript is executed in the order the code is written. This results in the DOM being updated by JavaScript code and rendered by the browser.
+      ```javascript
+      var object = new Object();
+      ```
 
-The order here is important. If the JavaScript did not wait for the HTML and CSS to finish, it would not be able to change.
+   2. **Object's create method:**
 
-## Q3. Is JavaScript static type or dynamic typed language?
-**Ans.** JavaScript is a dynamic typed language because a variable value is checked during runtime. It is an interpreted language, which means it does not need a compiler to translate code. & single threaded because it executes the code line by line.
+      The create method of Object creates a new object by passing the prototype object as a parameter
 
-## Q4. Advantage & Dis-advantage of JavaScript ?
-**Ans.** 
+      ```javascript
+      var object = Object.create(null);
+      ```
 
-<table>
-<tr>
-<th>Advantage</th>
-<th>Dis-Advantage</th>
-</tr>
-<tr>
-<td>Speed</td>
-<td>Lack of debugging functionality</td>
-</tr>
-<tr>
-<td>Ability to support all browser</td>
-<td>Lack of debugging functionality</td>
-</tr>
-<tr>
-<td>Interpreted language</td>
-<td>Code visibilty</td>
-</tr>            
-</table>
+   3. **Object literal syntax:**
 
-## Q5. Is JavaScript single threaded or multi threaded ?
-**Ans.** JavaScript is a single threaded language, because it executes the code line by line
+      The object literal syntax (or object initializer), is a comma-separated set of name-value pairs wrapped in curly braces.
 
-## Q6. What are the different data types present in JavaScript ?
-**Ans.** There are two type of datatype present in JavaScript :-
-1. Primitive datatype
-2. Non-Primitive datatype
+      ```javascript
+      var object = {
+           name: "Nikita",
+           age: 22
+      };
 
+      Object literal property values can be of any data type, including array, function, and nested object.
+      ```
 
-* Primitive datatype :- The value of primitive datatype is immutable, which means we can not change the value of primitive datatype. Primitive datatypes are : 
-   1. number <br>
-   2. string <br>
-   3. boolean <br>
-   4. null <br>
-   5. undefined
-
-* Non-Primitive datatype :- The value of non-primitive datatype is mutable, which means we can change the value of non-primitive datatype. Non-Primitive datatypes are : 
-   1. array <br>
-   2. object <br>
-   3. function <br>
-   4. date <br>
-   5. RegEx
+      **Note:** This is an easiest way to create an object
