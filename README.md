@@ -845,3 +845,21 @@
     Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and make it harder to break your application by not having any side effects. These principles are coming together with **Immutability** concept of ES6 by giving preference to **const** over **let** usage.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+17. ### What is the purpose of the let keyword
+
+    The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
+
+    Let's take an example to demonstrate the usage,
+
+    ```javascript
+    let counter = 30;
+    if (counter === 30) {
+      let counter = 31;
+      console.log(counter); // 31
+    }
+    console.log(counter); // 30 (because the variable in if block won't exist here)
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
