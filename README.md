@@ -932,4 +932,116 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+21. ### What is the Temporal Dead Zone
 
+    The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a `let` or `const` variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+
+    Let's see this behavior with an example,
+
+    ```javascript
+    function somemethod() {
+      console.log(counter1); // undefined
+      console.log(counter2); // ReferenceError
+      var counter1 = 1;
+      let counter2 = 2;
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+22. ### What is IIFE(Immediately Invoked Function Expression)
+
+    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
+
+    ```javascript
+    (function () {
+      // logic here
+    })();
+    ```
+
+    The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+
+    ```javascript
+    (function () {
+      var message = "IIFE";
+      console.log(message);
+    })();
+    console.log(message); //Error: message is not defined
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+23. ### How do you decode or encode a URL in JavaScript?
+
+    `encodeURI()` function is used to encode an URL. This function requires a URL string as a parameter and return that encoded string.
+    `decodeURI()` function is used to decode an URL. This function requires an encoded URL string as parameter and return that decoded string.
+
+    **Note:** If you want to encode characters such as `/ ? : @ & = + $ #` then you need to use `encodeURIComponent()`.
+
+    ```javascript
+    let uri = "employeeDetails?name=john&occupation=manager";
+    let encoded_uri = encodeURI(uri);
+    let decoded_uri = decodeURI(encoded_uri);
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+24. ### What is memoization
+
+    Memoization is a programming technique which attempts to increase a function’s performance by caching its previously computed results. Each time a memoized function is called, its parameters are used to index the cache. If the data is present, then it can be returned, without executing the entire function. Otherwise the function is executed and then the result is added to the cache.
+    Let's take an example of adding function with memoization,
+
+    ```javascript
+    const memoizAddition = () => {
+      let cache = {};
+      return (value) => {
+        if (value in cache) {
+          console.log("Fetching from cache");
+          return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+        } else {
+          console.log("Calculating result");
+          let result = value + 20;
+          cache[value] = result;
+          return result;
+        }
+      };
+    };
+    // returned function from memoizAddition
+    const addition = memoizAddition();
+    console.log(addition(20)); //output: 40 calculated
+    console.log(addition(20)); //output: 40 cached
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+25. ### What is Hoisting
+
+    Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
+    Let's take a simple example of variable hoisting,
+
+    ```javascript
+    console.log(message); //output : undefined
+    var message = "The variable Has been hoisted";
+    ```
+
+    The above code looks like as below to the interpreter,
+
+    ```javascript
+    var message;
+    console.log(message);
+    message = "The variable Has been hoisted";
+    ```
+
+    In the same fashion, function declarations are hoisted too
+
+    ```javascript
+    message("Good morning"); //Good morning
+
+    function message(name) {
+      console.log(name);
+    }
+    ```
+
+    This hoisting makes functions to be safely used in code before they are declared.
+
+    **[⬆ Back to Top](#table-of-contents)**
