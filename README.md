@@ -863,3 +863,73 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+18. ### What is the difference between let and var
+
+    You can list out the differences in a tabular format
+
+    | var                                                   | let                         |
+    | ----------------------------------------------------- | --------------------------- |
+    | It is been available from the beginning of JavaScript | Introduced as part of ES6   |
+    | It has function scope                                 | It has block scope          |
+    | Variables will be hoisted                             | Hoisted but not initialized |
+
+    Let's take an example to see the difference,
+
+    ```javascript
+    function userDetails(username) {
+      if (username) {
+        console.log(salary); // undefined due to hoisting
+        console.log(age); // ReferenceError: Cannot access 'age' before initialization
+        let age = 30;
+        var salary = 10000;
+      }
+      console.log(salary); //10000 (accessible due to function scope)
+      console.log(age); //error: age is not defined(due to block scope)
+    }
+    userDetails("John");
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+19. ### What is the reason to choose the name let as a keyword
+
+    `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+20. ### How do you redeclare variables in switch block without an error
+
+    If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
+
+    ```javascript
+    let counter = 1;
+    switch (x) {
+      case 0:
+        let name;
+        break;
+
+      case 1:
+        let name; // SyntaxError for redeclaration.
+        break;
+    }
+    ```
+
+    To avoid this error, you can create a nested block inside a case clause and create a new block scoped lexical environment.
+
+    ```javascript
+    let counter = 1;
+    switch (x) {
+      case 0: {
+        let name;
+        break;
+      }
+      case 1: {
+        let name; // No SyntaxError for redeclaration.
+        break;
+      }
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+
