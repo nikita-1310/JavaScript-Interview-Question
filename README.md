@@ -1133,3 +1133,58 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+32. ### How do you manipulate DOM using a service worker
+
+    Service worker can't access the DOM directly. But it can communicate with the pages it controls by responding to messages sent via the `postMessage` interface, and those pages can manipulate the DOM.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+33. ### How do you reuse information across service worker restarts
+
+    The problem with service worker is that it gets terminated when not in use, and restarted when it's next needed, so you cannot rely on global state within a service worker's `onfetch` and `onmessage` handlers. In this case, service workers will have access to IndexedDB API in order to persist and reuse across restarts.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+34. ### What is IndexedDB
+
+    IndexedDB is a low-level API for client-side storage of larger amounts of structured data, including files/blobs. This API uses indexes to enable high-performance searches of this data.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+35. ### What is web storage
+
+    Web storage is an API that provides a mechanism by which browsers can store key/value pairs locally within the user's browser, in a much more intuitive fashion than using cookies. The web storage provides two mechanisms for storing data on the client.
+
+    1. **Local storage:** It stores data for current origin with no expiration date.
+    2. **Session storage:** It stores data for one session and the data is lost when the browser tab is closed.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+36. ### What is a post message
+
+    Post message is a method that enables cross-origin communication between Window objects.(i.e, between a page and a pop-up that it spawned, or between a page and an iframe embedded within it). Generally, scripts on different pages are allowed to access each other if and only if the pages follow same-origin policy(i.e, pages share the same protocol, port number, and host).
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+37. ### What is a Cookie
+
+    A cookie is a piece of data that is stored on your computer to be accessed by your browser. Cookies are saved as key/value pairs.
+    For example, you can create a cookie named username as below,
+
+    ```javascript
+    document.cookie = "username=John";
+    ```
+
+    ![Screenshot](images/cookie.png)
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+38. ### Why do you need a Cookie
+
+    Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
+
+    1. When a user visits a web page, the user profile can be stored in a cookie.
+    2. Next time the user visits the page, the cookie remembers the user profile.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
