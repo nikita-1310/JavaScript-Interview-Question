@@ -1045,3 +1045,91 @@
     This hoisting makes functions to be safely used in code before they are declared.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+26. ### What are classes in ES6
+
+    In ES6, Javascript classes are primarily syntactic sugar over JavaScript’s existing prototype-based inheritance.
+    For example, the prototype based inheritance written in function expression as below,
+
+    ```javascript
+    function Bike(model, color) {
+      this.model = model;
+      this.color = color;
+    }
+
+    Bike.prototype.getDetails = function () {
+      return this.model + " bike has" + this.color + " color";
+    };
+    ```
+
+    Whereas ES6 classes can be defined as an alternative
+
+    ```javascript
+    class Bike {
+      constructor(color, model) {
+        this.color = color;
+        this.model = model;
+      }
+
+      getDetails() {
+        return this.model + " bike has" + this.color + " color";
+      }
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+27. ### What are closures
+
+    A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+
+    1. Own scope where variables defined between its curly brackets
+    2. Outer function’s variables
+    3. Global variables
+
+    Let's take an example of closure concept,
+
+    ```javascript
+    function Welcome(name) {
+      var greetingInfo = function (message) {
+        console.log(message + " " + name);
+      };
+      return greetingInfo;
+    }
+    var myFunction = Welcome("John");
+    myFunction("Welcome "); //Output: Welcome John
+    myFunction("Hello Mr."); //output: Hello Mr.John
+    ```
+
+    As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+28. ### What are modules
+
+    Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns. Most of the JavaScript modules export an object literal, a function, or a constructor
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+29. ### Why do you need modules
+
+    Below are the list of benefits using modules in javascript ecosystem
+
+    1. Maintainability
+    2. Reusability
+    3. Namespacing
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+30. ### What is scope in javascript
+
+    Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+31. ### What is a service worker
+
+    A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
