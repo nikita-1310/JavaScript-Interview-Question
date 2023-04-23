@@ -1238,3 +1238,62 @@
     LocalStorage is the same as SessionStorage but it persists the data even when the browser is closed and reopened(i.e it has no expiration time) whereas in sessionStorage data gets cleared when the page session ends.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+43. ### How do you access web storage
+
+    The Window object implements the `WindowLocalStorage` and `WindowSessionStorage` objects which has `localStorage`(window.localStorage) and `sessionStorage`(window.sessionStorage) properties respectively. These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local).
+    For example, you can read and write on local storage objects as below
+
+    ```javascript
+    localStorage.setItem("logo", document.getElementById("logo").value);
+    localStorage.getItem("logo");
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+44. ### What are the methods available on session storage
+
+    The session storage provided methods for reading, writing and clearing the session data
+
+    ```javascript
+    // Save data to sessionStorage
+    sessionStorage.setItem("key", "value");
+
+    // Get saved data from sessionStorage
+    let data = sessionStorage.getItem("key");
+
+    // Remove saved data from sessionStorage
+    sessionStorage.removeItem("key");
+
+    // Remove all saved data from sessionStorage
+    sessionStorage.clear();
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+45. ### What is a storage event and its event handler
+
+    The StorageEvent is an event that fires when a storage area has been changed in the context of another document. Whereas onstorage property is an EventHandler for processing storage events.
+    The syntax would be as below
+
+    ```javascript
+    window.onstorage = functionRef;
+    ```
+
+    Let's take the example usage of onstorage event handler which logs the storage key and it's values
+
+    ```javascript
+    window.onstorage = function (e) {
+      console.log(
+        "The " +
+          e.key +
+          " key has been changed from " +
+          e.oldValue +
+          " to " +
+          e.newValue +
+          "."
+      );
+    };
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
