@@ -1333,3 +1333,97 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+49. ### Give an example of a web worker
+
+    You need to follow below steps to start using web workers for counting example
+
+    1. Create a Web Worker File: You need to write a script to increment the count value. Let's name it as counter.js
+
+    ```javascript
+    let i = 0;
+
+    function timedCount() {
+      i = i + 1;
+      postMessage(i);
+      setTimeout("timedCount()", 500);
+    }
+
+    timedCount();
+    ```
+
+    Here postMessage() method is used to post a message back to the HTML page
+
+    1. Create a Web Worker Object: You can create a web worker object by checking for browser support. Let's name this file as web_worker_example.js
+
+    ```javascript
+    if (typeof w == "undefined") {
+      w = new Worker("counter.js");
+    }
+    ```
+
+    and we can receive messages from web worker
+
+    ```javascript
+    w.onmessage = function (event) {
+      document.getElementById("message").innerHTML = event.data;
+    };
+    ```
+
+    1. Terminate a Web Worker:
+       Web workers will continue to listen for messages (even after the external script is finished) until it is terminated. You can use the terminate() method to terminate listening to the messages.
+
+    ```javascript
+    w.terminate();
+    ```
+
+    1. Reuse the Web Worker: If you set the worker variable to undefined you can reuse the code
+
+    ```javascript
+    w = undefined;
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+50. ### What are the restrictions of web workers on DOM
+
+    WebWorkers don't have access to below javascript objects since they are defined in an external files
+
+    1. Window object
+    2. Document object
+    3. Parent object
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+51. ### What is a promise
+
+    A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
+
+    The syntax of Promise creation looks like below,
+
+    ```javascript
+    const promise = new Promise(function (resolve, reject) {
+      // promise description
+    });
+    ```
+
+    The usage of a promise would be as below,
+
+    ```javascript
+    const promise = new Promise(
+      (resolve) => {
+        setTimeout(() => {
+          resolve("I'm a Promise!");
+        }, 5000);
+      },
+      (reject) => {}
+    );
+
+    promise.then((value) => console.log(value));
+    ```
+
+    The action flow of a promise will be as below,
+
+    ![Screenshot](images/promises.png)
+
+    **[⬆ Back to Top](#table-of-contents)**
+
