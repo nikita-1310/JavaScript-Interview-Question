@@ -946,7 +946,7 @@
       let counter2 = 2;
     }
     ```
-
+    
     **[⬆ Back to Top](#table-of-contents)**
 
 22. ### What is IIFE(Immediately Invoked Function Expression)
