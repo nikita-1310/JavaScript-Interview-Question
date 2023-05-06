@@ -1645,4 +1645,214 @@
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
+66. ### What is a strict mode in javascript
 
+    Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression `"use strict";` instructs the browser to use the javascript code in the Strict mode.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+67. ### Why do you need strict mode
+
+    Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+68. ### How do you declare strict mode
+
+    The strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+    If declared at the beginning of a script, it has global scope.
+
+    ```javascript
+    "use strict";
+    x = 3.14; // This will cause an error because x is not declared
+    ```
+
+    and if you declare inside a function, it has local scope
+
+    ```javascript
+    x = 3.14; // This will not cause an error.
+    myFunction();
+
+    function myFunction() {
+      "use strict";
+      y = 3.14; // This will cause an error
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+69. ### What is the purpose of double exclamation
+
+    The double exclamation or negation(!!) ensures the resulting type is a boolean. If it was falsey (e.g. 0, null, undefined, etc.), it will be false, otherwise, it will be true.
+    For example, you can test IE version using this expression as below,
+
+    ```javascript
+    let isIE8 = false;
+    isIE8 = !!navigator.userAgent.match(/MSIE 8.0/);
+    console.log(isIE8); // returns true or false
+    ```
+
+    If you don't use this expression then it returns the original value.
+
+    ```javascript
+    console.log(navigator.userAgent.match(/MSIE 8.0/)); // returns either an Array or null
+    ```
+
+    **Note:** The expression !! is not an operator, but it is just twice of ! operator.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+70. ### What is the purpose of the delete operator
+
+    The delete keyword is used to delete the property as well as its value.
+
+    ```javascript
+    var user = { name: "John", age: 20 };
+    delete user.age;
+
+    console.log(user); // {name: "John"}
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+71. ### What is typeof operator
+
+    You can use the JavaScript typeof operator to find the type of a JavaScript variable. It returns the type of a variable or an expression.
+
+    ```javascript
+    typeof "John Abraham"; // Returns "string"
+    typeof (1 + 2); // Returns "number"
+    typeof [1, 2, 3] // Returns "object" because all arrays are also objects
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+72. ### What is undefined property
+
+    The undefined property indicates that a variable has not been assigned a value, or declared but not initialized at all. The type of undefined value is undefined too.
+
+    ```javascript
+    var user; // Value is undefined, type is undefined
+    console.log(typeof user); //undefined
+    ```
+
+    Any variable can be emptied by setting the value to undefined.
+
+    ```javascript
+    user = undefined;
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+73. ### What is null value
+
+    The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values. The type of null value is object.
+    You can empty the variable by setting the value to null.
+
+    ```javascript
+    var user = null;
+    console.log(typeof user); //object
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+74. ### What is the difference between null and undefined
+
+    Below are the main differences between null and undefined,
+
+    | Null                                                                                            | Undefined                                                                                               |
+    | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+    | It is an assignment value which indicates that variable points to no object.                    | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
+    | Type of null is object                                                                          | Type of undefined is undefined                                                                          |
+    | The null value is a primitive value that represents the null, empty, or non-existent reference. | The undefined value is a primitive value used when a variable has not been assigned a value.            |
+    | Indicates the absence of a value for a variable                                                 | Indicates absence of variable itself                                                                    |
+    | Converted to zero (0) while performing primitive operations                                     | Converted to NaN while performing primitive operations                                                  |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+75. ### What is eval
+
+    The eval() function evaluates JavaScript code represented as a string. The string can be a JavaScript expression, variable, statement, or sequence of statements.
+
+    ```javascript
+    console.log(eval("1 + 2")); //  3
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+76. ### What is the difference between window and document
+
+    Below are the main differences between window and document,
+
+    | Window                                                                        | Document                                                                                      |
+    | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+    | It is the root level element in any web page                                  | It is the direct child of the window object. This is also known as Document Object Model(DOM) |
+    | By default window object is available implicitly in the page                  | You can access it via window.document or document.                                            |
+    | It has methods like alert(), confirm() and properties like document, location | It provides methods like getElementById, getElementsByTagName, createElement etc              |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+77. ### How do you access history in javascript
+
+    The window.history object contains the browser's history. You can load previous and next URLs in the history using back() and next() methods.
+
+    ```javascript
+    function goBack() {
+      window.history.back();
+    }
+    function goForward() {
+      window.history.forward();
+    }
+    ```
+
+    **Note:** You can also access history without window prefix.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+78. ### How do you detect caps lock key turned on or not
+
+    The `mouseEvent getModifierState()` is used to return a boolean value that indicates whether the specified modifier key is activated or not. The modifiers such as CapsLock, ScrollLock and NumLock are activated when they are clicked, and deactivated when they are clicked again.
+
+    Let's take an input element to detect the CapsLock on/off behavior with an example,
+
+    ```html
+    <input type="password" onmousedown="enterInput(event)" />
+
+    <p id="feedback"></p>
+
+    <script>
+      function enterInput(e) {
+        var flag = e.getModifierState("CapsLock");
+        if (flag) {
+          document.getElementById("feedback").innerHTML = "CapsLock activated";
+        } else {
+          document.getElementById("feedback").innerHTML =
+            "CapsLock not activated";
+        }
+      }
+    </script>
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+79. ### What is isNaN
+
+    The isNaN() function is used to determine whether a value is an illegal number (Not-a-Number) or not. i.e, This function returns true if the value equates to NaN. Otherwise it returns false.
+
+    ```javascript
+    isNaN("Hello"); //true
+    isNaN("100"); //false
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+80. ### What are the differences between undeclared and undefined variables
+
+    Below are the major differences between undeclared(not defined) and undefined variables,
+
+    | undeclared                                                                                  | undefined                                                                              |
+    | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+    | These variables do not exist in a program and are not declared                              | These variables declared in the program but have not assigned any value                |
+    | If you try to read the value of an undeclared variable, then a runtime error is encountered | If you try to read the value of an undefined variable, an undefined value is returned. |
+
+    **[⬆ Back to Top](#table-of-contents)**
