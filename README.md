@@ -1856,3 +1856,4 @@
     | If you try to read the value of an undeclared variable, then a runtime error is encountered | If you try to read the value of an undefined variable, an undefined value is returned. |
 
     **[⬆ Back to Top](#table-of-contents)**
+    
