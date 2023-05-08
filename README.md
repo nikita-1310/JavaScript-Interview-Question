@@ -2,7 +2,6 @@
 
 > Click :star:if you like the project and follow [@NikitaAgarwal](https://www.linkedin.com/in/nikita-agarwal-3aa64622b/) for more updates. Coding questions available [here](#coding-exercise).
 
-
 ---
 ### Table of Contents
 
