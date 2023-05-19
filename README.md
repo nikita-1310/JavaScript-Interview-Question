@@ -2,7 +2,8 @@
 > Click :star:if you like the project and follow [@NikitaAgarwal](https://www.linkedin.com/in/nikita-agarwal-3aa64622b/) for more updates. Coding questions available [here](#coding-exercise).
 ---
 ### Table of Contents
-| No. | Questions                                                                                                                                                         |
+| No. | Questions  |
+
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [What are the possible ways to create objects in JavaScript](#what-are-the-possible-ways-to-create-objects-in-javascript)                                         |
 | 2   | [What is prototype chain](#what-is-a-prototype-chain)                                                                                                             |
