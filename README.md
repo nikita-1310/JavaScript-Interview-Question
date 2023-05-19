@@ -3,6 +3,7 @@
 
 ### Table of Contents
 | No. | Questions  | | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
 | 1   | [What are the possible ways to create objects in JavaScript](#what-are-the-possible-ways-to-create-objects-in-javascript)                                         |
 | 2   | [What is prototype chain](#what-is-a-prototype-chain)                                                                                                             |
 | 3   | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)                                                        |
